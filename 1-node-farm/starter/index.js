@@ -1,7 +1,16 @@
 const fileSystem = require('fs');
 
-const inputText = fileSystem.readFileSync('../starter/txt/input.txt', 'utf-8');
-const outputText = `This is what we know about the avocado: ${inputText}.\nCreated on timestamp ${Date.now()}`;
-fileSystem.writeFileSync('../starter/txt/outputTextFromFS.txt', outputText);
+// Blocking synchronous way of reading/writing files
+/*
+const inputTextVariable = fileSystem.readFileSync(
+  '../starter/txt/input.txt',
+  'utf-8'
+);
+const outputTextVariable = `This is what we know about the avocado: ${inputTextVariable}.\nCreated on timestamp ${Date.now()}`;
 
-console.log(outputText);
+fileSystem.writeFileSync(
+  '../starter/txt/outputTextFromFS.txt',
+  outputTextVariable
+);
+console.log('Text has been written!');
+*/
