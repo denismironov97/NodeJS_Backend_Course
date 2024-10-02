@@ -14,3 +14,14 @@ fileSystem.writeFileSync(
 );
 console.log('Text has been written!');
 */
+
+// Non blocking asynchronous way of reading/writing files.
+fileSystem.readFile(
+  './txt/start.txt',
+  'utf-8',
+  function callbackFn(error, data) {
+    console.log(data);
+  }
+);
+
+console.log('Print console log message.');
