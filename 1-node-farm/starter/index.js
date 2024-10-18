@@ -1,7 +1,11 @@
 const fileSystem = require('fs');
+const http = require('http');
+
+// File System NodeJS API
+/*
 
 // Blocking synchronous way of reading/writing files
-/*
+
 const inputTextVariable = fileSystem.readFileSync(
   '../starter/txt/input.txt',
   'utf-8'
@@ -13,7 +17,7 @@ fileSystem.writeFileSync(
   outputTextVariable
 );
 console.log('Text has been written!');
-*/
+
 
 try {
   // Non blocking asynchronous way of reading/writing files.
@@ -72,3 +76,13 @@ lineSeparator();
 function lineSeparator() {
   console.log('-'.repeat(35));
 }
+*/
+
+// http server NodeJS API
+const nodeServer = http.createServer(function (requestObj, responseObj) {
+  responseObj.end('Request just hit the server!');
+});
+
+nodeServer.listen(8000, '127.0.0.1', function () {
+  console.log('Listening to requests on port: 8000');
+});
