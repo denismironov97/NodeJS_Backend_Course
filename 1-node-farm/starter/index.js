@@ -80,9 +80,12 @@ function lineSeparator() {
 
 // http server NodeJS API
 const nodeServer = http.createServer(function (requestObj, responseObj) {
-  responseObj.end('Request just hit the server!');
+  responseObj.end(
+    'Request has just hit the server!\nString response from response object from Fn callback being called on every request'
+  );
 });
 
-nodeServer.listen(8000, '127.0.0.1', function () {
+nodeServer.listen(8000, '127.0.0.1', function fnCallOnNodeSerLaunch() {
   console.log('Listening to requests on port: 8000');
+  console.log('Node server started.');
 });
